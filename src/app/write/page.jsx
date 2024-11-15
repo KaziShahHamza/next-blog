@@ -1,11 +1,11 @@
 "use client";
-import React, { useState } from "react";
 import styles from "./writePage.module.css";
+import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 
 const WritePage = () => {
   const [open, setOpen] = useState(false);
@@ -27,7 +27,7 @@ const WritePage = () => {
       <input type="text" placeholder="Title" className={styles.input}/>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
+          <Image src="/plus.png" alt="" width={16} height={16} /> 
         </button>
         {open && (
           <div className={styles.add}>

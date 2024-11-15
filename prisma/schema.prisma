@@ -89,7 +89,6 @@ model Authenticator {
   @@unique([userId, credentialID])
 }
 
-
 model Category {
   id String @id @default(cuid()) @map("_id")
   slug String @unique
