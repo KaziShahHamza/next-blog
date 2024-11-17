@@ -97,6 +97,7 @@ model Category {
   Posts Post[]
 }
 
+
 model Post {
   id String @id @default(cuid()) @map("_id")
   createdAt DateTime @default(now())
