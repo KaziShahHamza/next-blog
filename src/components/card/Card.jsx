@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
- 
-const Card = () => {
+
+const Card = ({ key, item }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.imgContainer}>
+      <div className={styles.imgContainer} key={key}>
         <Image src="/p1.jpeg" alt="" fill className={styles.image} />
       </div>
       <div className={styles.textContainer}>
@@ -15,14 +15,16 @@ const Card = () => {
           <span className={styles.category}>CULTURE</span>
         </div>
         <Link href="/">
-          <h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </h1>
+          <h1>{item.title}</h1>
         </Link>
         <p className={styles.desc}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odio id, officia corporis illum nulla adipisci suscipit nisi sequi inventore.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+          odio id, officia corporis illum nulla adipisci suscipit nisi sequi
+          inventore.
         </p>
-        <Link href='/' className={styles.link}>Read More</Link>
+        <Link href="/" className={styles.link}>
+          Read More
+        </Link>
       </div>
     </div>
   );
