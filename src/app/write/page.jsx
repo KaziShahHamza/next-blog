@@ -32,7 +32,7 @@ const WritePage = () => {
         </button>
         {open && (
           <div className={styles.add}>
-            <input
+            <input 
               type="file"
               id="image"
               onChange={(e) => setFile(e.target.files[0])}
