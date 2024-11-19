@@ -2,7 +2,7 @@
 import styles from "./writePage.module.css";
 import React, { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
@@ -18,7 +18,7 @@ const WritePage = () => {
     return <div className={styles.loading}>Loading...</div>;
   }
 
-  if (status === "authenticated") {
+  if (status === "unauthenticated") {
     router.push("/");
   }
 
